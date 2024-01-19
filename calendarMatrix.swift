@@ -41,21 +41,21 @@ while moreTask {
     
     guard let mount = readLine(), let monthInt = Int(mount) else {
         print("Invalid input Month")
-        continue
+        break
     }
 
     print("Enter the Day: ")
     
     guard let day = readLine(), let dayInt = Int(day) else {
         print("Invalid input Day")
-        continue
+        break
     }
 
     print("Enter the Task: ")
     
     guard let taskDay = readLine() else {
         print("Invalid input Task")
-        continue
+        break
     }
 
     let taskOnDayMonth = Schedule(task: taskDay)
@@ -65,12 +65,9 @@ while moreTask {
     
     guard let confirmation = readLine(), confirmation.lowercased() == "y" else {
         moreTask = false
-        continue
+        break
     }
 }
-
-
-
 
 for (monthIndex, month) in myCalendar.enumerated() {
   
